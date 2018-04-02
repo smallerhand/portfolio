@@ -42,4 +42,3 @@ for i in files:
     file_path=png_dir+i
     images.append(imageio.imread(file_path))
 imageio.mimsave(png_dir+'movie.gif', images, duration=.5)
-c

@@ -1,0 +1,104 @@
+﻿```{r}
+library(stringr)
+library(rvest)
+library(dplyr)
+library(ggplot2)
+library(jpeg)
+t<-NULL
+party<-c("국민의당", "더불어민주당",
+         "바른정당", "자유한국당", "정의당")
+addr<-c("http://watch.peoplepower21.org/?mid=AssemblyMembers&mode=search&party=%EA%B5%AD%EB%AF%BC%EC%9D%98%EB%8B%B9&region=&sangim=&gender=&elect_num=&page=", 
+        "http://watch.peoplepower21.org/?mid=AssemblyMembers&mode=search&party=%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9&region=&sangim=&gender=&elect_num=&page=",
+        "http://watch.peoplepower21.org/?act=&mid=AssemblyMembers&vid=&mode=search&name=&party=%EB%B0%94%EB%A5%B8%EC%A0%95%EB%8B%B9&region=&sangim=&gender=&age=&elect_num=&page=",
+        "http://watch.peoplepower21.org/?mid=AssemblyMembers&mode=search&party=%EC%9E%90%EC%9C%A0%ED%95%9C%EA%B5%AD%EB%8B%B9&region=&sangim=&gender=&elect_num=&page=",
+        "http://watch.peoplepower21.org/?act=&mid=AssemblyMembers&vid=&mode=search&name=&party=%EC%A0%95%EC%9D%98%EB%8B%B9&region=&sangim=&gender=&age=&elect_num=&page=")
+pt<-data.frame(party=party, html=addr)
+
+for(a in 1:5){
+  b<-1
+  c<-1
+while(c!=0){
+  h<- read_html(paste0(pt$html[a], b))
+  url <- html_nodes(h, css="a, a:hover") %>%
+  html_attr('href')
+  url<-url[str_detect(url, "Member&member_seq")]
+  url<-paste0("http://watch.peoplepower21.org", url)
+  link<-NULL
+for(i in 1:length(url)){
+  if(i%%2==0){
+    link[i/2]<-url[i]
+  }
+}
+  b<-b+1
+  c<-length(link)
+  if(c!=0){
+txt0 <- html_nodes(h,css="a") %>%
+  html_text()
+txt0<-txt0[str_detect(txt0, "●")]
+name<-unlist(str_extract_all(txt0, "[가-힣]{2,4}"))
+money<- NULL
+for(i in 1:length(link)){
+h2<- read_html(link[i])
+txt2<-html_nodes(h2, ".info")%>%
+  html_text()
+if(length(txt2)>0){
+if(str_detect(txt2, ".*,[0-9]{3}[0-9]+.*[0-9]+.*")){
+  money[i]<-sub(".*,[0-9]{3}([0-9]+.*[0-9]+).*$", "\\1", txt2)
+}else{
+  money[i]<-NA
+}
+}
+}
+t<-rbind(t, data.frame(party=pt$party[a], name=name, money=money, stringsAsFactors = F))
+}
+}
+}
+
+t$money<-gsub(",","",t$money)
+t$money <- as.numeric(t$money)
+
+jpeg("C:/r/money1.jpeg")
+ggplot(t, aes(x=party, y=sqrt(money), colour=party))+
+  geom_point(position="jitter")
+dev.off()
+
+t2<-na.omit(t[sqrt(t$money)<10000,])
+jpeg("C:/r/money2.jpeg")
+ggplot(t2, aes(x=party, y=sqrt(money), colour=party))+
+  geom_point(position="jitter")
+dev.off()
+
+t2$money<-t2$money/100000
+jpeg("C:/r/money3.jpeg", width = 800, height = 800)
+ggplot(t2, aes(x=party, y=money, colour=party))+
+  geom_point(position="jitter", size = 3)+
+  labs(x=NULL, y='재산(억원)')+
+  theme(legend.text = element_text(size=18),
+        legend.title = element_text(size=18),
+        axis.text = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        legend.title.align=0.5, 
+        legend.box.background = element_rect(),
+        legend.box.margin = margin(t=0.1,r=0.1, b=0.1, l=0.1,unit='cm'))+
+  scale_color_discrete(name="당이름")+
+  scale_y_sqrt()
+dev.off()
+
+t2<-na.omit(t)
+t2$money<-t2$money/100000
+jpeg("C:/r/money4.jpeg", width = 800, height = 800)
+ggplot(t2, aes(x=party, y=money, colour=party))+
+  geom_boxplot()+
+  labs(x=NULL, y='재산(억원)')+
+  theme(legend.text = element_text(size=18),
+        legend.title = element_text(size=18),
+        axis.text = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        legend.title.align=0.5, 
+        legend.box.background = element_rect(),
+        legend.box.margin = margin(t=0.1,r=0.1, b=0.1, l=0.1,unit='cm'))+
+  scale_color_discrete(name="당이름")+
+  scale_y_sqrt()
+dev.off()
+```
+

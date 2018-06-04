@@ -7,12 +7,10 @@ Kaggle의 MNIST 숫자 이미지 분류(0~9)/Sound 분류(41종류) 문제를 Py
 <br>  
 構築されたいるシステムで部品のように仕事をすることより新しいものを作って出しする楽しみを感じたくて以前に通っていた証券会社を辞めてITスキルを学びました。 具体的にはマシンラーニング、ディプラーニングなどデータ分析と人工知能に関連した分野を学習してプロジェクトを通じて練習しました。 その中でも私はディプラーニングを利用したイメージ認識、および分類に関心が多くてデータサイエンスプラットフォームKaggleの数字イメージ分類問題をPythonとTensorflowを利用して解決し、更に、似た方法を利用したSound分類また、進めました(リーダーボードで99.4%、87.6%の点数記録)。
 </p>
-[Python이미지 분류 코드는 이 곳을 참고하시기 바랍니다. 数字イメージ分類コードはこちらをご参考ください。
-https://github.com/kyliusmethod/KYLius-method](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT1)
+[Python이미지 분류 코드는 이 곳을 참고하시기 바랍니다. 数字イメージ分類コードはこちらをご参考ください。https://github.com/kyliusmethod/KYLius-method](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT1)
 
 <br>
-[Python사운드 분류 코드는 이 곳을 참고하시기 바랍니다. Sound分類コードはこちらをご参考ください。
-https://github.com/kyliusmethod/KYLius-method](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT2)
+[Python사운드 분류 코드는 이 곳을 참고하시기 바랍니다. Sound分類コードはこちらをご参考ください。https://github.com/kyliusmethod/KYLius-method](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT2)
 
 ## R Machine Learning (Kaggle Credit Card Fraud)
 <p>
@@ -21,5 +19,4 @@ Kaggle의 신용카드 사기거래 검출 문제를 R로 풀었습니다. 데�
 <br>
 Kaggleのデータセットでクレジットカード詐欺検出モデリングをしてみました。このデータセットは、約28万個rowと31個column(最後の列は詐欺か否かを示すラベル)で構成されていました。KNNアルゴリズムを利用してモデル化しました。データの分布が非常に広く広がっており、偏っている場合には、log値をとり、正規化させるなどの前処理をしました。kの値を3~11までの入れ最もアキュラシーが良いk値を見つけ、モデルを完成しました。 このようにしてc&rt、c5.0アルゴリズムで予測したよりも高い精度を持ったKNNモデルを作成しました。
 </p>
-[R코드는 이 곳을 참고하시기 바랍니다. Rコードはこちらをご参考ください。
-https://github.com/smallerhand/portfolio](https://github.com/smallerhand/portfolio/tree/master/Kaggle%20creditcard%20fraud)
+[R코드는 이 곳을 참고하시기 바랍니다. Rコードはこちらをご参考ください。https://github.com/smallerhand/portfolio](https://github.com/smallerhand/portfolio/tree/master/Kaggle%20creditcard%20fraud)

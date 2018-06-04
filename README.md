@@ -10,6 +10,3 @@ Kaggle의 MNIST 숫자 이미지 분류(0~9)/Sound 분류(41종류) 문제를 Py
 
 [코드는 이 곳을 참고하시기 바랍니다. コードはこちらをご参考ください。
 https://github.com/kyliusmethod/KYLius-method](https://github.com/kyliusmethod/KYLius-method)
-
-[동영상은 이 곳을 참고하시기 바랍니다. 動画はこちらをご参考ください。
-](https://)

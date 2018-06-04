@@ -7,7 +7,10 @@ Kaggle의 MNIST 숫자 이미지 분류(0~9)/Sound 분류(41종류) 문제를 Py
 <br>  
 構築されたいるシステムで部品のように仕事をすることより新しいものを作って出しする楽しみを感じたくて以前に通っていた証券会社を辞めてITスキルを学びました。 具体的にはマシンラーニング、ディプラーニングなどデータ分析と人工知能に関連した分野を学習してプロジェクトを通じて練習しました。 その中でも私はディプラーニングを利用したイメージ認識、および分類に関心が多くてデータサイエンスプラットフォームKaggleの数字イメージ分類問題をPythonとTensorflowを利用して解決し、更に、似た方法を利用したSound分類また、進めました(リーダーボードで99.4%、87.6%の点数記録)。
 </p>
-[Python이미지 분류 코드는 이 곳을 참고하시기 바랍니다. 数字イメージ分類コードはこちらをご参考ください。](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT1)
+
+[Python이미지 분류 코드는 이 곳을 참고하시기 바랍니다.](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT1)
+<br>
+[数字イメージ分類コードはこちらをご参考ください。](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT1)
 
 <br>
 [Python사운드 분류 코드는 이 곳을 참고하시기 바랍니다. Sound分類コードはこちらをご参考ください。](https://github.com/kyliusmethod/KYLius-method/tree/master/PROJECT2)

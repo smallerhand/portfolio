@@ -4,7 +4,7 @@
 <p>
 Kaggle의 MNIST 숫자 이미지 분류(0~9)/Sound 분류(41종류) 문제를 Python으로 딥러닝을 이용해서 해결했습니다. Tensorflow의 CNN을 이용하여 이미지 및 숫자를 분류(리더보드에서 99.4%, 87.6% 의 점수 기록)하였으며, 파이썬 코드로 이미지 분류 결과를 토대로 파일 이름을 변경시키는 프로그램 및 캐글 답안을 작성하는 프로그램 등을 만들었습니다.
 <br>  <br>
-We solved Kaggle's MNIST number image classification (0 to 9) / Sound classification (41 types) problem using Deep Learning in Python. Using CNN in Tensorflow, we have categorized images and numbers (99.4 % of the reader board, 87.6 % of the answers) and created a file name based on the results of the image classification.
+We solved Kaggle's MNIST number image classification (0 to 9) / Sound classification (41 types) problem using Deep Learning in Python. Using CNN in Tensorflow, we have categorized images and numbers (99.4% and 87.6% of each on the leader board) and created a file name based on the results of the image classification.
 <br>  <br>
 KaggleのMNIST数字のイメージ分類(0~9)/Sound分類(41種類)問題をPythonでディプラーニングを利用して解決しました。 TensorflowのCNNを利用してイメージや数字を分類（リーダーボードで99.4%、87.6%の点数記録）して、パイソンコードでイメージ分類結果をもとに、ファイルの名前を変更させるプログラムおよび答案を作成するプログラムなどを作りました。
 </p>
